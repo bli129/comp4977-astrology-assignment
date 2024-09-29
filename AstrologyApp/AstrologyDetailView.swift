@@ -2,7 +2,7 @@
 //  AstrologyDetailView.swift
 //  AstrologyApp
 //
-//  Created by Benny Li on 2024-09-28.
+//  Created by Benny Li & Mika Manaligod on 2024-09-28.
 //
 
 import SwiftUI
