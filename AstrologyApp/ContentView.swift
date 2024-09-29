@@ -9,15 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            List(DataModel.data, id: \.id) { item in
-                HStack {
-                    Text(item.icon)
-                    Text("\(item.name)")
+        NavigationView {
+            VStack {
+                List(DataModel.data, id: \.id) { item in
+                    NavigationLink(destination: AstrologyDetailView(zodiac: item)) {
+                        HStack {
+                            Text(item.icon)
+                            Text("\(item.name)")
+                        }
+                    }
                 }
             }
+            .navigationTitle("Zodiac Signs")
         }
-        .padding()
     }
 }
 
