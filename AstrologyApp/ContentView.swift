@@ -10,10 +10,12 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            List(DataModel.data, id: \.id) { item in
+                HStack {
+                    Text(item.icon)
+                    Text("\(item.name)")
+                }
+            }
         }
         .padding()
     }
