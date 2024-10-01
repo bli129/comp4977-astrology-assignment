@@ -7,20 +7,20 @@
 
 import SwiftUI
 
+// TODO:
+// center icon and text
 struct ContentView: View {
     var body: some View {
-        NavigationView {
-            VStack {
-                List(DataModel.data, id: \.id) { item in
-                    NavigationLink(destination: AstrologyDetailView(zodiac: item)) {
-                        HStack {
-                            Text(item.icon)
-                            Text("\(item.name)")
-                        }
-                    }
-                }
-            }
-            .navigationTitle("Zodiac Signs")
+        TabView {
+            HomeView().tabItem {
+                Text("Home") }.tag(1) //TO DO: change color
+            
+            CalculatorView().tabItem{
+                Text("Calculator").tag(2) }
+            
+            Text("About").tabItem{
+                Text("About").tag(2) }
+            
         }
     }
 }

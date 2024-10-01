@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+//TODO: display date properly
 
 struct AstrologyDetailView: View {
     var zodiac: AstrologyData
@@ -16,9 +17,9 @@ struct AstrologyDetailView: View {
                 Text(zodiac.name)
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                Text(zodiac.date)
-                    .font(.headline)
-                    .padding(.bottom, 10)
+//                Text(zodiac.dateStart)
+//                    .font(.headline)
+//                    .padding(.bottom, 10)
                 Image(zodiac.image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
