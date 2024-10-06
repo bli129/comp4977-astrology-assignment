@@ -1,16 +1,15 @@
 import SwiftUI
 
-// TODO: Make auto-nav with just submit
 struct CalculatorView: View {
     @State private var selectedMonth = 1
     @State private var selectedDay = 1
     @State private var zodiacSign: AstrologyData? // State for selected zodiac sign
-    
+
     let dataModel = DataModel()
-    
+
     let months = Array(1 ... 12)
     let days = Array(1 ... 31)
-    
+
     var body: some View {
         NavigationStack {
             VStack {
@@ -22,7 +21,7 @@ struct CalculatorView: View {
                 }
                 .pickerStyle(WheelPickerStyle())
                 .padding()
-                
+
                 // Day picker
                 Picker("Select Day", selection: $selectedDay) {
                     ForEach(1 ..< 32) { day in
@@ -31,28 +30,26 @@ struct CalculatorView: View {
                 }
                 .pickerStyle(WheelPickerStyle())
                 .padding()
-                
-                // Submit button to calculate zodiac sign and trigger navigation
-                Button("Submit") {
-                    // Find the zodiac sign based on month and day
+
+                // NavigationLink that triggers the zodiac calculation and navigation
+                NavigationLink(
+                    destination: {
+                        if let unwrappedZodiacSign = zodiacSign {
+                            AstrologyDetailView(zodiac: unwrappedZodiacSign)
+                        }
+                    },
+                    label: {
+                        Text("Calculate Zodiac") // This acts as your trigger
+                    }
+                )
+                .simultaneousGesture(TapGesture().onEnded {
+                    // Trigger the zodiac calculation before navigation
                     zodiacSign = dataModel.zodiacSign(for: selectedMonth, day: selectedDay)
-                }
+                })
                 .padding()
                 
-                // Display the correct zodiac name
-                if let unwrappedZodiacSign = zodiacSign {
-                    Text(unwrappedZodiacSign.name)
-                    
-                    // Force unwrap the zodiacSign before passing to NavigationLink
-                    NavigationLink("Go to Detail", value: unwrappedZodiacSign)
-                        .padding()
-                        .foregroundColor(.blue)
-                }
             }
             .navigationTitle("Pick Month & Day")
-            .navigationDestination(for: AstrologyData.self) { zodiac in
-                AstrologyDetailView(zodiac: zodiac) // Force unwrap avoided by using non-optional type
-            }
         }
     }
 }
