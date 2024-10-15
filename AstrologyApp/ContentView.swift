@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
         TabView {
             HomeView().tabItem {
-                Text("Home") }.tag(1) //TO DO: change color
+                Text("Home") }.tag(1) //TO DO: Change font size
             
             CalculatorView().tabItem{
                 Text("Calculator").tag(2) }
