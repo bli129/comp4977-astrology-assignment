@@ -18,9 +18,8 @@ struct ContentView: View {
             CalculatorView().tabItem{
                 Text("Calculator").tag(2) }
             
-            Text("About").tabItem{
-                Text("About").tag(2) }
-            
+            AboutView().tabItem{
+                Text("About").tag(3) }
         }
     }
 }
