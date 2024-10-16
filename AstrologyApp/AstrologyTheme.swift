@@ -9,21 +9,21 @@ import Foundation
 import SwiftUI
 
 let themeBackgroundMain = LinearGradient(
-    gradient: Gradient(colors: [Color.green.opacity(0.5), Color.green]),
+    gradient: Gradient(colors: [Color.blue.opacity(0.3), Color.blue]),
     startPoint: .topLeading,
     endPoint: .bottomTrailing
 )
 
 let themeBackgroundSecondary = LinearGradient(
-    gradient: Gradient(colors: [Color.red.opacity(0.9), Color.red]),
+    gradient: Gradient(colors: [Color.purple.opacity(0.85), Color.purple]),
     startPoint: .leading,
     endPoint: .trailing
 )
 
-let themeBackgroundThird = Color.yellow.opacity(0.8)
+let themeBackgroundThird = Color.yellow.opacity(0)
 
 let themeBackgroundDetail = LinearGradient(
-    gradient: Gradient(colors: [Color.orange.opacity(0.7), Color.blue.opacity(0.3)]),
+    gradient: Gradient(colors: [Color.purple.opacity(0.7), Color.blue.opacity(0.7)]),
     startPoint: .top,
     endPoint: .bottom
 )

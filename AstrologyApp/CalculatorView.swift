@@ -29,11 +29,9 @@ struct CalculatorView: View {
                         .pickerStyle(WheelPickerStyle())
                         .padding()
                     }
-
-                    // ZStack to add mustard line behind the "Day" picker
                     ZStack {
                         themeBackgroundThird
-                            .frame(height: 10) // Thin mustard line
+                            .frame(height: 10)
                             .cornerRadius(5)
                             .padding(.horizontal, 40)
 

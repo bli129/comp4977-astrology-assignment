@@ -38,7 +38,7 @@ struct AboutView: View {
                                 .fontWeight(.semibold)
                                 .foregroundColor(.primary)
                             Spacer()
-                            Text("[A01315151]")
+                            Text("A01315151")
                                 .foregroundColor(.black)
                                 .padding(.leading, 10)
                         }
@@ -59,7 +59,7 @@ struct AboutView: View {
                                 .fontWeight(.semibold)
                                 .foregroundColor(.primary)
                             Spacer()
-                            Text("[A01332836]")
+                            Text("A01332836")
                                 .foregroundColor(.black)
                                 .padding(.leading, 10)
                         }

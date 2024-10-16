@@ -7,19 +7,32 @@
 
 import SwiftUI
 
-// TODO:
-// center icon and text
 struct ContentView: View {
     var body: some View {
         TabView {
             HomeView().tabItem {
-                Text("Home") }.tag(1) //TO DO: Change font size
+                VStack {
+                    Image(systemName: "house")
+                    Text("Home")
+                        .font(.system(size: 24))
+                }
+            }.tag(1)
             
-            CalculatorView().tabItem{
-                Text("Calculator").tag(2) }
+            CalculatorView().tabItem {
+                VStack {
+                    Image(systemName: "plus.circle")
+                    Text("Calculator")
+                        .font(.system(size: 24))
+                }
+            }.tag(2)
             
-            AboutView().tabItem{
-                Text("About").tag(3) }
+            AboutView().tabItem {
+                VStack {
+                    Image(systemName: "info.circle")
+                    Text("About")
+                        .font(.system(size: 24))
+                }
+            }.tag(3)
         }
     }
 }
